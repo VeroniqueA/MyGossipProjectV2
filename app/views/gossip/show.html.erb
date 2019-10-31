@@ -1,0 +1,22 @@
+<h1 class="my-4" style="text-align: center"><%= @gossip.title %></h1>
+
+<br>
+<h2> Contenu </h2><br>
+<p> <%= @gossip.content %> </p>
+
+<a class="btn btn-primary" <%= link_to "Editer", edit_gossip_path(@gossip.id)%></a>
+<br>
+<br>
+
+<%= form_tag gossip_path(@gossip.id), method: "delete" do %>
+<%= submit_tag "Supprimer", class: 'btn btn-primary'%>
+<% end %>
+
+<br>
+<br>
+
+<h2> Date de création </h2><br>
+<p> <%= @gossip.created_at %> </p>
+
+
+<%end%>
